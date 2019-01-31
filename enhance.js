@@ -1,6 +1,6 @@
 success = (item) =>{
     return item = {
-        name: item.name,
+        name: `[+${item.enhancement+1}]${item.name}`,
         type: item.type,
         durability: item.durability,
         enhancement: item.enhancement+1 
