@@ -1,25 +1,21 @@
 const enhance = require('./enhance.js');
+const item = require('./items.js')
 
 //Arrange
 
-const item = {
-    name:"knife",
-    type:"weapon",
-    durability: 70,
-    enhancement: 2,
-}
+
 
 //Act
 
-const enhancedItem = success(item)
+const enhancedPistol= success(item.pistol)
 
 
 //Assert
 
 test('enhancement level increases 1', () =>{
-    expect(enhancedItem).toHaveProperty('enhancement',3);
+    expect(enhancedPistol).toHaveProperty('enhancement',3);
 })
 
 test('enhancement adds "+number" to name', () =>{
-    expect(enhancedItem.name).toEqual("[+3]knife");
+    expect(enhancedPistol.name).toEqual("[+3]9mm Revolver");
 })
