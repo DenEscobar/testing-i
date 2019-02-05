@@ -1,3 +1,5 @@
+
+
 success = (item) =>{
     if(item.enhancement <15){
         return item = {
@@ -6,42 +8,42 @@ success = (item) =>{
             durability: item.durability,
             enhancement: item.enhancement+1  
         }
-    } else if (item.enhancement = 15){
+    } else if (item.enhancement === 15){
         return item = {
             name: `[PRI]${item.name}`,
             type: item.type,
             durability: item.durability,
             enhancement: "PRI" 
         }
-    } else if (item.enhancement = "PRI"){
+    } else if (item.enhancement === "PRI"){
         return item = {
             name: `[DUO]${item.name}`,
             type: item.type,
             durability: item.durability,
             enhancement: "DUO" 
         }
-    }else if (item.enhancement = "DUO"){
+    }else if (item.enhancement === "DUO"){
         return item = {
             name: `[TRI]${item.name}`,
             type: item.type,
             durability: item.durability,
             enhancement: "TRI" 
         }
-    }else if (item.enhancement = "TRI"){
+    }else if (item.enhancement === "TRI"){
         return item = {
             name: `[TET]${item.name}`,
             type: item.type,
             durability: item.durability,
             enhancement: "TET" 
         }
-    }else if (item.enhancement = "TET"){
+    }else if (item.enhancement === "TET"){
         return item = {
             name: `[PEN]${item.name}`,
             type: item.type,
             durability: item.durability,
             enhancement: "PEN" 
         }
-    } else if (item.enhancement = "PEN"){
+    } else if (item.enhancement === "PEN"){
         return item = {
             name: `[PEN]${item.name}`,
             type: item.type,
@@ -55,7 +57,7 @@ fail = (item) =>{
     if(item.enhancement >5 && item.enhancement <15){
         if(item.durability<25){
             return item = {
-                name: item.name,
+                name: `[+${item.enhancement-5}]${item.name}`,
                 type: item.type,
                 durability: 20,
                 enhancement: item.enhancement
@@ -195,3 +197,4 @@ repair = (item) =>{
 
 module.exports = {
     success, fail, repair,
+}
